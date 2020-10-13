@@ -1,0 +1,73 @@
+<section class="section">
+  <div class="container is-fluid">
+    <div class="notification">
+      <h2 class="title is-4">Archivos</h2>
+      <%= simple_form_for(@upload) do |f| %>
+        <%= f.hidden_field :status, value: "En espera" %>
+        <%= f.hidden_field :file_errors, value: " " %>
+        <%= simple_fields_for :no_model_fields do |n| %>
+          <p class="paragraph">Ingresar en los campos a continuacion el numero de columna correspondiente a los datos iniciando por 1.</p>
+          <br/>
+          <section class="section">
+            <div class="columns">
+              <div class="column is-2">
+                <div class="field">
+                  <div class="control">
+                    <%= n.input :name, label: "Nombre", input_html: { class: "text "}, wrapper: false, label_html: {class: "label"}, placeholder: "Posicion nombre..." %>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-2">
+                <div class="field">
+                  <div class="control">
+                    <%= n.input :dob, label: "Fecha de Nacimiento", input_html: { class: "text "}, wrapper: false, label_html: {class: "label"}, placeholder: "Posicion fecha de nacimiento..." %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-2">
+                <div class="field">
+                  <div class="control">
+                    <%= n.input :telephone, label: "Telefono", input_html: { class: "text "}, wrapper: false, label_html: {class: "label"}, placeholder: "Posicion Telefono..." %>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="columns">
+            <div class="column is-2">
+              <div class="field">
+                <div class="control">
+                  <%= n.input :address, label: "Direccion", input_html: { class: "text "}, wrapper: false, label_html: {class: "label"}, placeholder: "Posicion Direccion..." %>
+                </div>
+              </div>
+            </div>
+            <div class="column is-2">
+              <div class="field">
+                <div class="control">
+                  <%= n.input :credit_card, label: "Tarjeta de Credito", input_html: { class: "text "}, wrapper: false, label_html: {class: "label"}, placeholder: "Posicion TC..." %>
+                </div>
+              </div>
+            </div>
+            <div class="column is-2">
+              <div class="field">
+                <div class="control">
+                  <%= n.input :email, label: "Email", input_html: { class: "text "}, wrapper: false, label_html: {class: "label"}, placeholder: "Posicion Email..." %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="field">
+          <br/>
+          <p class="paragraph">Seleccionar el archivo a importar :</p>
+          <div class="control">
+            <%= f.file_field :doc %>
+          </div>
+        </div>
+        <br />
+        <%= f.button :submit, 'Importar', class: "button is-info" %>
+      <% end %>
+    </div>
+  </div>
+</section>

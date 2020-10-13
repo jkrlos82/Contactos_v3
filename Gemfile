@@ -2,6 +2,15 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
+gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'bulma-rails', '~> 0.9.0'
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
+gem 'delayed_job'
+gem 'delayed_job_active_record'
+gem 'daemons'
+gem 'whenever', require: false
+gem 'safe_attributes'
+gem 'lockbox'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
@@ -40,6 +49,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors', '~> 2.8', '>= 2.8.1'
 end
 
 group :test do

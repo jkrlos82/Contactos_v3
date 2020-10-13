@@ -1,0 +1,26 @@
+<section class="section">
+    <div class="container is-fluid">
+      <div class="notification">
+        <h2 class="title is-4">Archivos</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th><abbr title="Position">Id</abbr></th>
+              <th><abbr title="Played"> Archivo</abbr></th>
+              <th><abbr title="Won">Estado</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @uploads.each do |csv| %>
+              <tr>
+                <th><%= csv.id %></th>
+                <td><%= csv.doc.filename %></td>
+                <td><%= csv.status %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to "Cargar Archivo", new_upload_file_path %>
+      </div>
+    </div>
+</section>
